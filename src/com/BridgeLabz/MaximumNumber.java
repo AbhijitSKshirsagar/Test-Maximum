@@ -3,12 +3,12 @@ package com.BridgeLabz;
 import java.util.Scanner;
 
 /*
- * Purpose to find maximum number among three integer numbers using findMax method
+ * Purpose to find maximum number among three float numbers using findMax method
  */
 public class MaximumNumber {
-	private static void compareTo(Integer n1, Integer n2, Integer n3) {
-		// TODO Auto-generated method stub
-		Integer max = n1;
+	private static void compareTo(Float n1, Float n2, Float n3) {
+
+		Float max = n1;
 
 		if (n2.compareTo(max) > 0) {
 			max = n2;
@@ -21,16 +21,16 @@ public class MaximumNumber {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Welcome to Maximum nunber");
 
-		Integer a, b, c;
+		System.out.println("Welcome to Maximum nunber");
+		float a, b, c;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the value of a");
-		a = sc.nextInt();
+		a = sc.nextFloat();
 		System.out.println("Enter the value of b");
-		b = sc.nextInt();
+		b = sc.nextFloat();
 		System.out.println("Enter the value of c");
-		c = sc.nextInt();
+		c = sc.nextFloat();
 		sc.close();
 		compareTo(a, b, c);
 	}

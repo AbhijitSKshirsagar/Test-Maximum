@@ -2,6 +2,9 @@ package com.BridgeLabz;
 
 import java.util.Scanner;
 
+/*
+ * Purpose to find maximum number among three integer numbers using findMax method
+ */
 public class MaximumNumber {
 	private static void compareTo(Integer n1, Integer n2, Integer n3) {
 		// TODO Auto-generated method stub

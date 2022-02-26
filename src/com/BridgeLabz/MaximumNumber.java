@@ -21,7 +21,7 @@ public class MaximumNumber {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Welcome to Maximum nunber");
+		System.out.println("Welcome to Maximum number");
 
 		Integer a, b, c;
 		Scanner sc = new Scanner(System.in);

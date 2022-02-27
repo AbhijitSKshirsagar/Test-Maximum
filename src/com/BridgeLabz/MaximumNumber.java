@@ -1,37 +1,51 @@
 package com.BridgeLabz;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 /*
- * Purpose to find maximum number among three string numbers using findMax method
+ * Purpose to find maximum string among three string using findMax method
  */
-public class MaximumNumber {
-	private static void compareTo(String s1, String s2, String s3) {
+public class MaximumNumber<T extends Comparable<T>> {
+	T[] parameter;
 
-		String max = s1;
+	public MaximumNumber(T[] parameter) {
+		this.parameter = parameter;
+	}
 
-		if (s2.compareTo(max) > 0) {
-			max = s2;
-			if (s3.compareTo(max) > 0)
-				max = s3;
-			System.out.println("The maximum number is : " + max);
-
+	public static <T> void printMax(T[] parameter, T maximum) {
+		for (T i : parameter) {
+			System.out.println(i);
 		}
+		System.out.printf("maximum of array is: ", maximum, parameter);
+	}
 
+	/*
+	 * Purpose - Used Generic method to find maximum values
+	 * 
+	 * @parameter - parameters
+	 */
+
+	public static <T extends Comparable<T>> T maximum(T[] parameter) {
+		Arrays.sort(parameter);
+		int length = parameter.length;
+		T max = parameter[length - 1];
+
+		/*
+		 * max = parameter[0]; for (T element : parameter) { if (element.compareTo(max)
+		 * > 0) { max = element; } }
+		 */
+		printMax(parameter, max);
+		return max;
 	}
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
-		System.out.println("Welcome to Maximum nunber");
-		String a, b, c;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the value of a");
-		a = sc.next();
-		System.out.println("Enter the value of b");
-		b = sc.next();
-		System.out.println("Enter the value of c");
-		c = sc.next();
-		sc.close();
-		compareTo(a, b, c);
+		Integer[] maximumOFintegers = { 18, 34, 15, 32, 41, 67, 5, 59 };
+		System.out.println("The maximum of integers is : " + maximum(maximumOFintegers));
+		Float[] maximumOfFloat = { 1.3f, 4.5f, 6.7f, 7.8f, 3.3f, 2.9f, 9.0f, 1.8f };
+		System.out.println("The maximum of floats is : " + maximum(maximumOfFloat));
+		String[] maximumOfString = { "zzza", "pqr", "xyz", "ijk", "stu", "ijk", "efg", "mno" };
+		System.out.println("The maximum of strings is : " + maximum(maximumOfString));
 	}
 }
